@@ -10,13 +10,13 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
 
-app.engine('hbs', hbs.engine({extname: '.hbs'}));
+app.engine('hbs', hbs.engine({extname: '.hbs', defaultLayout: 'main'}));
 app.set('view engine', 'hbs');
 
 const userRouter = require('./routes/userRoutes');
 app.use('/users', userRouter);
 
-console.log(userRouter)
+// console.log(userRouter)
 
 app.listen(8080, function(){
     console.log('Serwer Node.js działa');
