@@ -5,17 +5,25 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
-                <th scope="col">Address</th>
+                <th scope="col">Street</th>
+                <th scope="col">City</th>
+                <th scope="col">Zipcode</th>
+                <th scope="col">Geo latitude</th>
+                <th scope="col">Geo longtitude</th>
                 <th scope="col">Personal website</th>
             </tr>
         </thead>
         <tbody>
             {{#each users as |user|}}
             <tr>
-                <th scope="row">1</th>
-                <td>{{user.name}}</td>
+                <th scope="row">{{inc @index}}</th>
                 <td>{{user.address.street}}</td>
-                <td>Website link</td>
+                <td>{{user.address.suite}}</td>
+                <td>{{user.address.city}}</td>
+                <td>{{user.address.zipcode}}</td>
+                <td>{{user.address.geo.lat}}</td>
+                <td>{{user.address.geo.lng}}</td>
+                <td><a href="">{{user.website}}</a></td>
             </tr>
             {{/each}}
 
